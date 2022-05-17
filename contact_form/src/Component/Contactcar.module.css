@@ -1,0 +1,40 @@
+
+
+.container{
+
+padding: 1rem;
+
+border-radius: 0.5rem;
+
+display: flex;
+
+gap: 2rem;
+
+margin-bottom: 0.25rem;
+border-bottom: 1px solid gray ;
+
+width: 30%;
+margin: auto;
+border-bottom-left-radius: 0rem;
+border-bottom-right-radius: 0rem;
+text-align: center;
+
+}
+
+
+.left{
+    /* border: 1px solid red; */
+    flex: 3;
+
+}
+
+.right{
+    /* border: 1px solid blue; */
+    flex: 6;
+}
+
+.Avtar{
+
+margin: 40px;
+
+}
