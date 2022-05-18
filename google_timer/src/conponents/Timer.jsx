@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 
+
+
 import { Showtimer } from "./Showtimer"
 
 import { Controlbuttons } from "./Controlbuttons"
+
+import { Manual } from "./Manual";
 
 export const Timer = () => {
 
@@ -10,8 +14,10 @@ export const Timer = () => {
 
     const [isPaused, setIsPaused] = useState(true);
 
+    const [stat,setStat]=useState(false)
+
     const [time, setTime] = useState(0);
-    
+
 
     useEffect(() => {
 
@@ -56,15 +62,17 @@ export const Timer = () => {
         <div>
             <h1 style={{ color: "tomato", fontSize: "40px", fontStyle: "italic", }}>Google Timer</h1>
 
-            <Showtimer time={time} />
+            {stat ? <Manual /> : <div><Showtimer time={time} />
+                <Controlbuttons
+                    active={isActive}
+                    isPaused={isPaused}
+                    handleStart={handleStart}
+                    handlePauseResume={handlePauseResume}
+                    handleReset={handleReset}
+                /></div>
+            }
 
-            <Controlbuttons
-                active={isActive}
-                isPaused={isPaused}
-                handleStart={handleStart}
-                handlePauseResume={handlePauseResume}
-                handleReset={handleReset}
-            />
+            <button  onClick={(() => setStat(!stat))}>{stat ? "Automatic stop Watch" : "Enter Manually"}</button>
 
         </div>
     )
