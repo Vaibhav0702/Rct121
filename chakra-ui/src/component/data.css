@@ -1,0 +1,86 @@
+#card:hover{
+    border: 2px solid blueviolet;
+    cursor: pointer;
+}
+
+.box{
+    /* border: 1px solid red; */
+    text-align: center;
+    margin-top: 10px;
+}
+
+.input{
+   
+    width: 40%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    border: 2px solid gray;
+
+}
+
+
+.datab3{
+
+   
+    margin: auto;
+    width:40%;
+    margin-top: 3%;
+   
+   justify-content: space-between;
+
+
+}
+
+
+.datab2{
+
+display: flex;
+width: 40%;
+margin: auto;
+margin-top: 2%;
+gap: 2%;
+
+}
+
+@media (max-width:800px){
+
+.datab{
+    visibility: hidden;
+}
+
+.datab3{
+
+   
+    margin: auto;
+    width:100%;
+    margin-top: 3%;
+   /* border: 1px solid red; */
+   justify-content: space-between;
+
+
+}
+
+
+.datab2{
+
+display: flex;
+width: 70%;
+margin: auto;
+margin-top: -220px;
+gap: 2%;
+
+}
+
+.box{
+    /* border: 1px solid blue; */
+    padding: 20px;
+    background-color: rgb(177, 167, 245);
+}
+
+
+.input{
+
+    background-color: white;
+}
+
+
+}

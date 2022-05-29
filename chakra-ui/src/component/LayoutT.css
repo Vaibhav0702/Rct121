@@ -1,0 +1,42 @@
+
+
+
+.dextop{
+    text-align: center;
+    width: 40%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.h1{
+     font-weight: bold;
+     font-style: italic;
+     font-size: 50px;
+}
+
+.mobile{
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 20px;
+    visibility: hidden;
+}
+
+
+@media (max-width:800px){
+
+    .dextop{
+        visibility: hidden;
+    }
+    .mobile{
+        visibility: visible;
+        /* border:  1px solid red; */
+        margin-top: -490px;
+    }
+
+    .h1{
+        font-weight: bold;
+        font-style: italic;
+        font-size: 25px;
+   }
+}
