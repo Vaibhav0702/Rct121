@@ -1,16 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
-import { Counter } from "./Component/Counter";
+import { Counter } from "./Component/Counter/Counter";
 import Home from "./Component/Home";
 import { Navbar } from "./Component/Navbar";
-import { Todo } from "./Component/Todo";
-
-
-
-
-
-
+import Todos from "./Component/Todos/Todos";
 
 
 function App() {
@@ -19,7 +13,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home/>}></Route>
-        <Route path="/todo" element={<Todo/>}></Route>
+        <Route path="/todo" element={<Todos/>}></Route>
         <Route path="/counter" element={<Counter />}></Route>
       </Routes>
     </div>

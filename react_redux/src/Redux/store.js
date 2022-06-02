@@ -1,4 +1,13 @@
-import { legacy_createStore as creatStore } from "redux"; //redux-toolkit
-import { counterReducer } from "./reducer";
+import { combineReducers, legacy_createStore as creatStore } from "redux"; //redux-toolkit
+import { counterReducer } from "./Counter/reducer";
 
-export const store = creatStore(counterReducer, { counter: 0 , todos : []  });
+import { todosReducer } from "./Todos/reducer";
+
+
+const rootReducer = combineReducers({
+    counter : counterReducer,
+    todos : todosReducer,
+})
+
+
+export const store = creatStore(rootReducer);

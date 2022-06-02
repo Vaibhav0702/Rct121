@@ -12,11 +12,13 @@ import { BrowserRouter } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+     <ReduxProvider store={store}>
       <BrowserRouter>
-      <ReduxProvider store={store}>
+     
         <App />
-      </ReduxProvider>
+      
     </BrowserRouter>
+    </ReduxProvider>
   </React.StrictMode>
 );
 

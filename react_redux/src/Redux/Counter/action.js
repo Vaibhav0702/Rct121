@@ -6,7 +6,7 @@ export const INCREMENT_COUNT = "INCREMENT_COUNT";
 
 export const DECREMENT_COUNT = "DECREMENT_COUNT";
 
-export const ADD_TODO = "ADD_TODO";
+
 
 // Action creator
 
@@ -23,11 +23,3 @@ export const reduceCount = (data) => {
     payload: data,
   };
 };
-
-export const addtodo = (data) => {
-    return {
-
-        type: ADD_TODO,
-        payload: data,
-    }
-}
