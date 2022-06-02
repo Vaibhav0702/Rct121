@@ -1,10 +1,4 @@
+import { legacy_createStore as creatStore } from "redux"; //redux-toolkit
+import { counterReducer } from "./reducer";
 
-
-import { legacy_createStore as createStore } from "redux";
-import { reducer } from "./reducer";
-
-export const store = createStore(reducer);
-
-
-
-
+export const store = creatStore(counterReducer, { counter: 0 , todos : []  });

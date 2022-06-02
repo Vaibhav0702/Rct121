@@ -1,52 +1,35 @@
 
 
+import { addCount, reduceCount } from "../Redux/action"
 
-import React from "react";
-import { addCounter, reduceCounter } from "../Redux/action";
-
-import { AppContext } from "../Redux/AppContextProvider";
+import { useDispatch, useSelector } from "react-redux";
 
 
 
 
 export const Counter = () => {
 
-    const [state, setState] = React.useState(0)
 
-    const { dispatch, getState } = React.useContext(AppContext)
+    const dispatch = useDispatch();
 
-    const { counter } = getState();
+    const counter = useSelector((store) => store.counter); // useContext 
+  
 
-
-
-
-
-    const handleAdd = () => {
-
-        dispatch(addCounter(1));
+    return <div>
 
 
+        <h3>Counter : {counter} </h3>
 
-    }
-
-
-    const handleReduce = () => {
-
-        dispatch(reduceCounter(1));
-    
-    }
-
-    return <>
-
-        <div>Counter : {counter} </div>
-
-        <button onClick={handleAdd}>ADD</button>
-
-        <button onClick={handleReduce}>REDUCE</button>
+        <button style={{margin:"10px"}} disabled={counter === 0} onClick={() => {
+            dispatch(reduceCount(1))
+        }}>REDUCE</button>
+         
+         <button style={{margin:"10px"}} disabled={counter === 10} onClick={() => {
+            dispatch(addCount(1))
+        }}>ADD </button>
 
 
-    </>
-
+    </div>
 
 
 }

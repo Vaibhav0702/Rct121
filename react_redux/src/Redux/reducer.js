@@ -1,27 +1,21 @@
-//state , action
+//store , action
 
-import { ADD_COUNTER, REDUCE_COUNTER } from "./actionTypes";
+import { INCREMENT_COUNT, DECREMENT_COUNT , ADD_TODO } from "./action";
 
-const initState = {
-  counter: 1,
-};
+// store : {counter : 0}
 
-export const reducer = (state = initState, { type, payload }) => {
+export const counterReducer = (store, { type, payload }) => {
   switch (type) {
+    case INCREMENT_COUNT:
+      return { ...store, counter: store.counter + payload };
 
-    case ADD_COUNTER:
-      return { 
-          ...state,
-          counter :  state.counter + payload
-      };
+    case DECREMENT_COUNT:
+      return { ...store, counter: store.counter - payload };
 
-    case REDUCE_COUNTER:
-      return {
-          ...state,
-          counter : state.counter - payload
-      };
+    case ADD_TODO:
+      return { ...store, todos: [...store.todos, payload] };
 
     default:
-      return state;
+      return store;
   }
 };

@@ -1,24 +1,33 @@
+// {type : "" , payload : ""}
+
+// Action Types
+
+export const INCREMENT_COUNT = "INCREMENT_COUNT";
+
+export const DECREMENT_COUNT = "DECREMENT_COUNT";
+
+export const ADD_TODO = "ADD_TODO";
+
 // Action creator
-// it is a function
-// whichg return an object
-// that defines the action
-// an action is an object with a key called type
-// to defined what type of action it is
-// payload , etc
 
-import { ADD_COUNTER, REDUCE_COUNTER } from "./actionTypes";
-
-export const addCounter = (payload) => {
+export const addCount = (data) => {
   return {
-    type: ADD_COUNTER,
-    payload,
+    type: INCREMENT_COUNT,
+    payload: data,
   };
 };
 
-export const reduceCounter = (payload) => {
+export const reduceCount = (data) => {
   return {
-    type: REDUCE_COUNTER,
-    payload,
+    type: DECREMENT_COUNT,
+    payload: data,
   };
 };
 
+export const addtodo = (data) => {
+    return {
+
+        type: ADD_TODO,
+        payload: data,
+    }
+}
