@@ -31,14 +31,18 @@ export const getTodosFailure = (data) => {
   };
 };
 
-export const getTodos = (dispatch) => {
+export const getTodos = async (dispatch , page) => {
   const todoRequestAction = getTodosRequest();
 
   dispatch(todoRequestAction);
 
-  axios({
+  return axios({
     url: "http://localhost:8080/task",
     method: "GET",
+    params:{
+      _limit:3,
+      _page:page,
+    }
   })
     .then((res) => {
       const todoSuccessAction = getTodosSuccess(res.data);
@@ -50,7 +54,7 @@ export const getTodos = (dispatch) => {
     });
 }; // get todos
 
-//  ------------------------------------------------
+//--------------------------------------------------------------
 
 export const addTodosRequest = (data) => {
   return {
@@ -79,12 +83,12 @@ export const addTodos = ({title , dispatch}) => {
 
   dispatch(todoRequestAction);
 
-  axios({
+ return axios({
     url: "http://localhost:8080/task",
     method: "POST",
     data:{
         title,
-        status:false
+        status:false,
     }
   })
     .then((res) => {

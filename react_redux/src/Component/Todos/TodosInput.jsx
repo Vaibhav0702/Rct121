@@ -16,22 +16,21 @@ const TodosInput = () => {
      addTodos({
          title:text,
          dispatch
-     }).then(()=>{
+     })
+     .then(()=>{
          getTodos(dispatch);
-     }).catch((err)=>{
-         console.log("err" , err.message);
-     });
+     })
  };
 
 
     return (
-        <>
-            <input  value={text} onChange={(e) => setText(e.target.value)} placeholder="ADD NEW TASK" />
+        <div style={{margin:"20px"}}>
+            <input style={{marginRight:"20px"}} value={text} onChange={(e) => setText(e.target.value)} placeholder="ADD NEW TASK" />
 
-             <button  onClick={handleADD}       >ADD</button>
+             <button  onClick={ handleADD }  >ADD</button>
 
 
-        </>
+        </div>
     )
 }
 

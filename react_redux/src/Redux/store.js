@@ -11,3 +11,4 @@ const rootReducer = combineReducers({
 
 
 export const store = creatStore(rootReducer);
+
