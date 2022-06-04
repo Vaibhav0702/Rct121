@@ -1,6 +1,6 @@
 
 
-import React, {  useState } from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { addTodos, getTodos } from '../../Redux/Todos/action';
 
@@ -8,26 +8,26 @@ const TodosInput = () => {
 
     const [text, setText] = useState("");
 
- const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
 
- const handleADD=()=>{
+    const handleADD = () => {
 
-     addTodos({
-         title:text,
-         dispatch
-     })
-     .then(()=>{
-         getTodos(dispatch);
-     })
- };
+        dispatch(addTodos({
+            title: text,
+
+        }))
+            .then(() => {
+                dispatch(getTodos());
+            })
+    };
 
 
     return (
-        <div style={{margin:"20px"}}>
-            <input style={{marginRight:"20px"}} value={text} onChange={(e) => setText(e.target.value)} placeholder="ADD NEW TASK" />
+        <div style={{ margin: "20px" }}>
+            <input style={{ marginRight: "20px" }} value={text} onChange={(e) => setText(e.target.value)} placeholder="ADD NEW TASK" />
 
-             <button  onClick={ handleADD }  >ADD</button>
+            <button onClick={handleADD}  >ADD</button>
 
 
         </div>

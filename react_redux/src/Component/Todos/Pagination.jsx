@@ -18,9 +18,9 @@ const Pagination = ({
   return (
     <>
       <div>
-       
+
         {
-          arr.map((item, page) => <button style={{margin:"3px"}} onClick={() => onPageChange(page+1)} disabled={(page + 1) === currentPage}>{page + 1}</button>)
+          arr.map((item, page) => <button style={{ margin: "3px" }} onClick={() => onPageChange(page + 1)} disabled={(page + 1) === currentPage}>{page + 1}</button>)
         }
 
       </div>

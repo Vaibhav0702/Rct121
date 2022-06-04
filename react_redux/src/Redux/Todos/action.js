@@ -31,10 +31,13 @@ export const getTodosFailure = (data) => {
   };
 };
 
-export const getTodos = async (dispatch , page) => {
+export const getTodos = (  page  ) =>  (dispatch , getState) => {
   const todoRequestAction = getTodosRequest();
 
+
   dispatch(todoRequestAction);
+
+  console.log(`token is ` , getState().auth.token )
 
   return axios({
     url: "http://localhost:8080/task",
@@ -78,7 +81,10 @@ export const addTodosFailure = (data) => {
   };
 };
 
-export const addTodos = ({title , dispatch}) => {
+
+
+
+export const addTodos = ({title }) =>(dispatch) => {
   const todoRequestAction = addTodosRequest();
 
   dispatch(todoRequestAction);

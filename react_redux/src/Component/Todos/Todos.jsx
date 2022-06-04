@@ -11,7 +11,9 @@ import TodosList from './TodosList'
 const Todos = () => {
 
 
-  const todos = useSelector((store) => store.todos.todos)
+  const token = useSelector((store) => store.auth.token);
+
+  console.log(token);
 
   const [page, setPage] = useState(1);  // set page
 
@@ -20,7 +22,7 @@ const Todos = () => {
 
   useEffect(() => {
 
-    getTodos(dispatch, page)
+    dispatch(getTodos( page ))
 
   }, [page])
 
