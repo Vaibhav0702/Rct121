@@ -105,4 +105,5 @@ export const addTodos = ({title }) =>(dispatch) => {
       const todoErrorAction = addTodosFailure();
       dispatch(todoErrorAction);
     });
+    
 }; // add todo
